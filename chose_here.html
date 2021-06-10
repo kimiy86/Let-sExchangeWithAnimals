@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html onclick="playSong()">
 
 
 <html>
@@ -16,7 +16,9 @@
 
 			<p id="situation">
 
-                First, you have only a cherry and fish.
+				Press <a><b>HERE</b></a> to turn on the music.
+
+                <br><br>First, you have only a cherry and fish.
 				<br>You repeats exchange with some animals.
 				<br>Final goal of this game is getting a house!
 				<br>Whether you can change from a low value to a high value or not...
@@ -29,11 +31,7 @@
 
 		</div>
 
-		<audio type="Axletree - The Woods (Remastered).mp3" autoplays>
-
-			
-		</audio>
-
+		
 
 		<style>
 
@@ -71,7 +69,7 @@
 		#situation {
 
 			position: absolute;
-			top: 170px;
+			top: 155px;
 			left: 20px;
 			padding: 15px 15px 15px 15px;
 
@@ -85,14 +83,29 @@
 		#credit {
 
 				position: absolute;
-				top: 372px;
-				right: 4px;
-				font-size: 12px;
+				top: 370px;
+				right: 25px;
+				font-size: 10px;
 
 			}
 		
 
 		</style>
+
+		<script>
+
+			var song = new Audio('Axletree - The Woods (Remastered).mp3');
+
+			song.volume = .1;
+		
+			function playSong(){
+
+				song.play();
+
+			}
+
+			
+		</script>
 
 	</body>
 

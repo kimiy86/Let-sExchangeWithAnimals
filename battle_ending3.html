@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html onclick="playSong()">
 	<head>
-		<title>Battle</title>
+		<title>Let's exchange with animals</title>
 
 		<style>
 
@@ -186,7 +186,6 @@
 
 			<ul>
 				<li onclick="fight()">Fight</li>
-				<li onclick="run()">Run</li>
 			</ul>
 
 	</div>
@@ -293,12 +292,7 @@
 
 		}
 
-		function showHeroDead(){
-
-			heroImg.style.display = 'none';
-
-			heroDeadImg.style.display = '';
-		}
+		
 
 		function goToLostPage(){
 
@@ -307,6 +301,8 @@
 
 		function heroLoses(){
 
+			heroImg.style.display = 'none';
+			heroDeadImg.style.display = '';
 			enemyImg.style.display = 'none';
 			enemyWinsImg.style.display = '';
 
@@ -317,6 +313,8 @@
 			setTimeout(goToLostPage, 2000);
 		}
 
+		
+
 		function goToWonPage(){
 
 			window.location.href = 'won_ending3.html';
@@ -326,6 +324,8 @@
 
 			heroImg.style.display = 'none';
 			heroWinsImg.style.display = '';
+			enemyImg.style.display = 'none';
+			enemyDeadImg.style.display = '';
 			messageDiv.innerHTML = 'You win!';
 			messageDiv.style.display = '';
 			song.pause();
@@ -378,7 +378,7 @@
 			}
 			else{
 
-				showHeroDead();
+				
 				setTimeout(heroWins, 700);
 			}
 		}
@@ -454,7 +454,6 @@
 			}
 			else{
 
-				showHeroDead();
 				setTimeout(heroLoses, 700);
 			}
 
@@ -505,29 +504,7 @@
 			window.location.href = 'lost.html';
 		}
 
-		function run(){
-
-			fighting = true;
-
-			if(Math.random() > .5){
-
-				herImg.style.display = 'none';
-
-				runSound.play();
-
-				setTimeout(goToRanPage, 1000);
-			}
-			else{
-
-				hideMenu();
-				messageDiv.innerHTML = 'Couldn\'t run!';
-				messageDiv.style.display = '';
-				setTimeout(enemyAttack, 1000);
-				setTimeout(hideMessage, 2000);
-				setTimeout(showMenu, 2000);
-				setTimeout(stopFighting, 2000);
-			}
-		}
+		
 
 		function stopFighting(){
 
